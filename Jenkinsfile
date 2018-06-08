@@ -6,7 +6,7 @@ pipeline {
                 sh 'go --version'
             }
         }
-        stage('Push") {
+        stage('Push') {
             docker.withRegistry('https://docker.majustfortesting.com') {
 
             def customImage = docker.build("my-image:${env.BUILD_ID}")
