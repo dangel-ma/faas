@@ -11,7 +11,7 @@ pipeline {
               branch 'master'
             }
             steps {
-                withDockerRegistry([ url: "docker.majustfortesting.com" ]) {
+                withDockerRegistry([ credentialsId: "", url: "docker.majustfortesting.com" ]) {
                 sh 'docker push ma/faas:latest'
                 }
             }
