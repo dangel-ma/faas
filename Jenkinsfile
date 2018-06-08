@@ -5,13 +5,13 @@ pipeline {
              steps {
                 sh 'ls'
              }
-         }
+         }/*
          stage('Publish') {
             steps {
                 withDockerRegistry([ credentialsId: "", url: "docker.majustfortesting.com" ]) {
-                sh 'docker push'
+                    cont.push()
                 }
             }
-         }
+         }*/
      }
 }
