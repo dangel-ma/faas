@@ -21,8 +21,8 @@ FROM alpine:3.7
 # Needed to reach the hub
 RUN apk --no-cache add ca-certificates 
 
-#COPY --from=builder /usr/bin/fwatchdog  /usr/bin/fwatchdog
-#COPY --from=builder /go/bin/MarkdownRender  /usr/bin/MarkdownRender
+COPY --from=builder /usr/bin/fwatchdog  /usr/bin/fwatchdog
+COPY --from=builder /go/bin/MarkdownRender  /usr/bin/MarkdownRender
 ENV fprocess "/usr/bin/MarkdownRender"
 
 CMD ["/usr/bin/fwatchdog"]
