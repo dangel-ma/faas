@@ -5,13 +5,13 @@ pipeline {
              steps {
                 sh 'ls'
              }
-         }/*
+         }
          stage('Publish') {
             steps {
-                withDockerRegistry([ credentialsId: "", url: "docker.majustfortesting.com" ]) {
-                    cont.push()
+                docker.withRegistry("https://your.ecr.domain.amazonws.com") {
+                    docker.image("faas").push()
                 }
             }
-         }*/
+         }
      }
 }
